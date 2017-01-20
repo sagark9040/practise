@@ -54,7 +54,7 @@ public class MaxProductSubset {
 		int currentMinProduct = arr[0];
 		int prevMaxProduct = arr[0];
 		int prevMinProduct = arr[0];
-		int Product = arr[0];
+		int maxProduct = arr[0];
 		
 		System.out.println("i=" + 0 + " val=" + arr[0] + " prevMaxProduct=" + prevMaxProduct + " prevMinProduct="+ prevMinProduct);
 		
@@ -62,16 +62,17 @@ public class MaxProductSubset {
 			currentMaxProduct = Math.max(arr[i], Math.max(arr[i]*prevMaxProduct, arr[i]*prevMinProduct));
 			currentMinProduct = Math.min(arr[i], Math.min(arr[i]*prevMaxProduct, arr[i]*prevMinProduct));
 			
-			Product = Math.max(currentMaxProduct, Product);
+			maxProduct = Math.max(currentMaxProduct, maxProduct);
 			
 			prevMaxProduct = currentMaxProduct;
 			prevMinProduct = currentMinProduct;
 			
-			System.out.println("i=" + i + " val=" + arr[i] + " prevMaxProduct=" + prevMaxProduct + " prevMinProduct="+ prevMinProduct);
+			System.out.println("\ni=" + i + " val=" + arr[i]);
+			System.out.println("maxProduct="+maxProduct+ " prevMaxProduct=" + prevMaxProduct + " prevMinProduct="+ prevMinProduct);
 			
 		}
 		
-		System.out.println(Product);
+		System.out.println(maxProduct);
 		
 	}
 	
