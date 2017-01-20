@@ -55,6 +55,8 @@ public class MaxProductSubset {
 		int prevMaxProduct = arr[0];
 		int prevMinProduct = arr[0];
 		int maxProduct = arr[0];
+		int startIndex = 0;
+		int endIndex = 0;
 		
 		System.out.println("i=" + 0 + " val=" + arr[0] + " prevMaxProduct=" + prevMaxProduct + " prevMinProduct="+ prevMinProduct);
 		
@@ -62,7 +64,12 @@ public class MaxProductSubset {
 			currentMaxProduct = Math.max(arr[i], Math.max(arr[i]*prevMaxProduct, arr[i]*prevMinProduct));
 			currentMinProduct = Math.min(arr[i], Math.min(arr[i]*prevMaxProduct, arr[i]*prevMinProduct));
 			
-			maxProduct = Math.max(currentMaxProduct, maxProduct);
+			if (currentMaxProduct > maxProduct) {
+				maxProduct = Math.max(currentMaxProduct, maxProduct);
+				endIndex = i;
+			}
+			
+			//maxProduct = Math.max(currentMaxProduct, maxProduct);
 			
 			prevMaxProduct = currentMaxProduct;
 			prevMinProduct = currentMinProduct;
@@ -73,6 +80,8 @@ public class MaxProductSubset {
 		}
 		
 		System.out.println(maxProduct);
+		System.out.println(startIndex);
+		System.out.println(endIndex);
 		
 	}
 	
@@ -85,3 +94,48 @@ public class MaxProductSubset {
 	}
 	
 }
+
+/*
+int maxProduct(int a[],int n)
+{
+    int maxPro=a[0];
+    int maxTill=a[0];
+    int minTill=a[0];
+    
+    
+     for(int i=(a[0]!=0);i<n;i++)
+     {
+         
+        if(a[i]>0)
+        {
+            maxTill=max(maxTill*a[i],a[i]);
+            minTill=min(minTill*a[i],a[i]);
+        }
+        else if(a[i]==0)
+        {
+            if(i<n-1)
+            {  maxTill=a[i+1];
+                minTill=a[i+1];
+                i+=1;
+            
+            }
+            else
+                maxTill=0;
+        }
+        else
+        {
+            int temp=maxTill;
+            maxTill=max(minTill*a[i],1);
+            minTill=min(temp*a[i],a[i]);
+        
+        }
+
+        if(maxPro<maxTill)
+            maxPro=maxTill;
+     }
+     
+     return maxPro;
+
+
+}
+*/
