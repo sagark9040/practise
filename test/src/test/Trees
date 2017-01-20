@@ -1,0 +1,92 @@
+//		- Trees & Graphs - BFS/DFS, Pre,Post,In traversals, Adj List, Matrix
+//		- DAG, AVL, R/B
+//		- Arrays/Lists/Stacks/Queues/HashMaps/HashSets/HashTables/LL-Insertions, Deletions, Retrieval
+//		- Iterator, Comparator
+//		- Bit Shifts
+
+class Node{
+	int data;
+	Node left;
+	Node right;
+	
+	Node(int d){
+		data = d;
+	}
+}
+
+class Tree{
+	Node root;
+	
+	void addNode(int data){
+		if(root == null){
+			root = new Node(data);
+			return;
+		}
+		Node cur = root;
+		while(cur!=null){
+			if(data<cur)
+				cur=cur.left;
+			else
+				cur=cur.right;
+		}
+		cur = new Node(data);
+		return;
+	}
+	
+	void bfsTraversal(){
+		if(root == null) //This if block is a problem 
+			return;
+			
+		Queue q = new Queue();
+		q.enqueue(cur);
+		
+		while(!q.isEmpty()){ //TODO is empty or .hasElements()
+			Node node = q.dequeue(); // TODO: Poll
+			System.out.println(node.data);
+			if(node.left != null)
+				q.enqueue(node.left);
+			if(node.right != null)
+				q.enqueue(node.right);
+		}
+	}
+	
+	void dfsTraversal(Node root){
+		if(root == null)
+			return;
+		
+		dfsTraversal(root.left);
+		System.out.println(root.data);
+		dfsTraversal(root.right);
+	}
+}
+	
+public class TreeImpl{
+	public static void main(String args[]){
+		Tree tree = new Tree();
+		tree.addNode(4);
+		tree.addNode(2);
+		tree.addNode(6);
+		tree.addNode(1);
+		tree.addNode(7);
+		tree.addNode(5);
+		tree.addNode(3);
+		
+		tree.dfs();
+	}
+}	
+	
+/*
+
+- Wed 7/13:
+    - Java / Concurrency / SQL / Basic Java Operations by hand / Know runtime + their parent classes / Design Patterns
+    - Read graphs, DP, Oral solving
+
+*/	
+	
+	
+	
+	
+	
+	
+	
+	
