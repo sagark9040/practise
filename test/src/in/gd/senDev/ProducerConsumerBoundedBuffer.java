@@ -1,4 +1,4 @@
-package senDev;
+package in.gd.senDev;
 
 /*
 Implementation of Producer Consumer Class

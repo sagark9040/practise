@@ -1,4 +1,4 @@
-package senDev;
+package in.gd.senDev;
 
 //Given an array like [-1, 2, 3, 5, 4, 6] and it should print the 3 that is order of the array is equal to array element
 public class Array {

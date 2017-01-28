@@ -1,4 +1,4 @@
-package senDev;
+package in.gd.senDev;
 
 //Given a positive integer N, write a function to return a list of the first N fibonacci
 //numbers in order. For example, if N=5, the output list is 0 1 1 2 3.

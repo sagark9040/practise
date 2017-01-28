@@ -1,4 +1,4 @@
-package test;
+package goog;
 
 public class BitManip {
 	public static void main (String args[]) {
