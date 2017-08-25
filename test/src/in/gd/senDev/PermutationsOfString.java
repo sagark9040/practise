@@ -83,6 +83,6 @@ class StringPermutation {
 
     public static void main(String args[]) {
         StringPermutation sp = new StringPermutation();
-        sp.permute("AABC".toCharArray())
+        sp.permute("AABC".toCharArray());
     }
 }
