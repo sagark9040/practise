@@ -1,4 +1,4 @@
-package test.src.bberg;
+package bberg;
 
 public class Something {
 
