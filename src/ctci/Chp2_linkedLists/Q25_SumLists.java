@@ -1,4 +1,4 @@
-package ctci.linkedLists;
+package ctci.Chp2_linkedLists;
 
 public class Q25_SumLists {
 

@@ -1,4 +1,4 @@
-package ctci.linkedLists;
+package ctci.Chp2_linkedLists;
 
 import java.util.HashSet;
 import java.util.Set;
