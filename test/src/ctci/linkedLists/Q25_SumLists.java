@@ -6,7 +6,7 @@ public class Q25_SumLists {
 		Node resultTemp = null, resultHead = null, carry = null;
 		
 		// Iterate through all the digits of both the numbers
-		while(first != null && second != null){
+		while(first != null || second != null){
 			int result = getValue(carry) + getValue(first) + getValue(second);
 			
 			// When the sum of digits is greater than 1, we carry 1 forward
@@ -19,10 +19,11 @@ public class Q25_SumLists {
 			}
 			else {
 				resultTemp.next = new Node(result%10);
+				resultTemp = resultTemp.next;
 			}
-			
-			first = first.next;
-			second = second.next;
+			//System.out.println("-->" + resultTemp.data);
+			first = first != null ? first.next : first;
+			second = second != null ? second.next : second;
 		}
 		if (carry != null)
 			resultTemp.next = new Node(1);
