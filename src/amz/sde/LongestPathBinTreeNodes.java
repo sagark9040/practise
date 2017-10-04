@@ -1,4 +1,4 @@
-package src.amz.sde;
+package amz.sde;
 
 public class LongestPathBinTreeNodes {
 

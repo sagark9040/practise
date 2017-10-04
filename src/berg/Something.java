@@ -1,4 +1,4 @@
-package bberg;
+package berg;
 
 public class Something {
 
