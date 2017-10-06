@@ -8,36 +8,65 @@ public class ReverseALinkedList {
 
 	Node head;
 	
-	public Node reverse(Node curr, Node prev){
+	public Node reverse(Node cur, Node prev){
+		if(cur == null) return cur;
 		
-		if(curr == null || curr.next == null){
-			head = curr;	
-			
-			curr.next = prev;
-			return null;
+		if(cur.getNext() == null) {
+			head = cur;
+			head.setNext(prev);
+			return head;
 		}
 		
-		Node next1 = curr.next;
-		curr.next = prev;
-		reverse(next1, curr);
+		Node next = cur.getNext();
+		cur.setNext(prev);
+		reverse(next, cur);
 		
 		return head;
 	}
 	
-	public Node rev(Node cur, Node prev){
-		if(cur == null || cur.next == null) {
-			this.head = cur;		
-			return this.head;
-		}
-		
-		Node next = cur.next;
-		cur.next = prev;
-		reverse(next, cur);
-		
-		return this.head;
-	}
+
+	
 	
 	public static void main(String args[]){
+		String mode = "iterative";
+		//String mode = "recursive";
+		
+		emptyList(mode);
+		singleElement(mode);
+		twoElements(mode);
+		severalElements(mode);
+	}
+	
+	public static void emptyList(String mode){
+		LinkedList ll = new LinkedList();
+		ReverseALinkedList rev = new ReverseALinkedList();	
+		ll.printList();
+		ll = new LinkedList(rev.reverse(ll.head(), null));
+		ll.printList();
+	}
+	
+	public static void singleElement(String mode){
+		LinkedList ll = new LinkedList();
+		ReverseALinkedList rev = new ReverseALinkedList();
+		
+		ll.addNode(new Node(1));
+		ll.printList();
+		ll = new LinkedList(rev.reverse(ll.head(), null));
+		ll.printList();
+	}
+	
+	public static void twoElements(String mode){
+		LinkedList ll = new LinkedList();
+		ReverseALinkedList rev = new ReverseALinkedList();
+		
+		ll.addNode(new Node(1));
+		ll.addNode(new Node(2));
+		ll.printList();
+		ll = new LinkedList(rev.reverse(ll.head(), null));
+		ll.printList();
+	}
+	
+	public static void severalElements(String mode){
 		LinkedList ll = new LinkedList();
 		ReverseALinkedList rev = new ReverseALinkedList();
 		
@@ -45,18 +74,8 @@ public class ReverseALinkedList {
 		ll.addNode(new Node(2));
 		ll.addNode(new Node(3));
 		ll.addNode(new Node(4));
-		ll.addNode(new Node(5));
-		ll.addNode(new Node(6));
-		
 		ll.printList();
-		//rev.reverse(ll.head(), null);
-		ll = new LinkedList(rev.rev(ll.head(), null));
-
-		System.out.println("\n\n-----");
-		
+		ll = new LinkedList(rev.reverse(ll.head(), null));
 		ll.printList();
-		ll = new LinkedList(rev.rev(ll.head(), null));
-		ll.printList();
-	}	
+	}
 }
-

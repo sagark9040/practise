@@ -29,11 +29,11 @@ public class LinkedList {
 
 		Node cur = this.head;
 
-		while (cur.next != null) {
-			cur = cur.next;
+		while (cur.getNext() != null) {
+			cur = cur.getNext();
 		}
 
-		cur.next = n;
+		cur.setNext(n);
 
 	}
 
@@ -42,8 +42,8 @@ public class LinkedList {
 		
 		System.out.println("\n Linked List: ");
 		while(cur != null) {
-			System.out.print(cur.data + " ");
-			cur = cur.next;
+			System.out.print(cur.getData() + " ");
+			cur = cur.getNext();
 		}
 		
 	}
