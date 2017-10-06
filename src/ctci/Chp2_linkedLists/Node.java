@@ -9,6 +9,11 @@ public class Node {
 		this.setData(d);
 		this.setNext(null);
 	}
+	
+	public Node(int d, Node head){
+		this.setData(d);
+		this.setNext(head);
+	}
 
 	public Node getNext() {
 		return next;
