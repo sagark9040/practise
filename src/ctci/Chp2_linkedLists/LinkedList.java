@@ -2,7 +2,7 @@ package ctci.Chp2_linkedLists;
 
 public class LinkedList {
 
-	private Node head;
+	public Node head;
 
 	LinkedList(Node node) {
 		this.head = node;
