@@ -2,6 +2,7 @@ package ctci.Chp4_TreesAndGraphs;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.LinkedList;
 
 /*
@@ -117,8 +118,8 @@ public class Q43_ListsOfDepths {
 			listsOfDepths.add(list);
 		}
 	}
-	
 	public static void main(String args[]){
+				
 		TreeNode root = new TreeNode(5);
 		
 		root.left = new TreeNode(3);
@@ -136,10 +137,81 @@ public class Q43_ListsOfDepths {
 		
 		
 		Tree tree = new Tree();
+		ArrayList<LinkedList<TreeNode>> allDepths = new ArrayList<LinkedList<TreeNode>>();
+		allDepths = ctciSolnDepths(root);
+		
+		printALofLL(allDepths);
+		
+		
 		//tree.printBinaryTree(root);
 		
+		/*
+		My Solution
+		 
 		createFinalList(root);
 		createListOfList();
+		 */
+		
+		//CTCI Solution
+		
+	}
+	
+	private static void printALofLL(ArrayList<LinkedList<TreeNode>> result) {
+		int depth = 0;
+		for(LinkedList<TreeNode> entry : result) {
+			Iterator<TreeNode> i = entry.listIterator();
+			System.out.print("Link list at depth " + depth + ":");
+			while(i.hasNext()){
+				System.out.print(" " + ((TreeNode)i.next()).data);
+			}
+			System.out.println();
+			depth++;
+		}
+	}
+
+
+	public static ArrayList<LinkedList<TreeNode>> ctciSolnDepths(TreeNode root){
+		if(root == null)
+			return null;
+		
+		LinkedList<TreeNode> currentLevelNodes = new LinkedList<TreeNode>(Arrays.asList(root));
+		LinkedList<TreeNode> parentLevelNodes = new LinkedList<TreeNode>();
+		ArrayList<LinkedList<TreeNode>> allDepths = new ArrayList<LinkedList<TreeNode>>();
+		
+		while(!currentLevelNodes.isEmpty()){
+			allDepths.add(currentLevelNodes);
+			parentLevelNodes = currentLevelNodes;
+			currentLevelNodes = new LinkedList<TreeNode>();
+			
+			for(TreeNode parentNode: parentLevelNodes){
+				if(parentNode.left != null)
+					currentLevelNodes.add(parentNode.left);
+				if(parentNode.right != null)
+					currentLevelNodes.add(parentNode.right);
+			}
+		}
+		
+		return allDepths;
 	}
 	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
