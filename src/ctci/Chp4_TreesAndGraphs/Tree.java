@@ -11,14 +11,6 @@ public class Tree{
 		// TODO Auto-generated constructor stub
 	}
 
-	public void printTree(TreeNode root){
-		
-		System.out.println(root.data);
-		printTree(root.left); 
-		System.out.print(" ");
-		printTree(root.right);
-		
-	}	
 	public static void printBinaryTree(TreeNode root){
 		System.out.println("------------------------------------------------------------------------------------");
 		System.out.println("	 			BINARY TREE									    ");
@@ -56,12 +48,13 @@ public class Tree{
 }
 
 class TreeNode{
+	public int data;
+	public TreeNode left, right;
+	public boolean isFirst;
+	
 	public TreeNode(int i) {
 		this.data = i;
 	}
-
-	public int data;
-	public TreeNode left, right;
 	
 	public void setLeftChild(TreeNode left){
 		this.left = left;
