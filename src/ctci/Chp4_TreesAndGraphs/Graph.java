@@ -1,7 +1,7 @@
 package ctci.Chp4_TreesAndGraphs;
 
 public class Graph {
-	GraphNode[] graphNodes;
+	GraphNode[] graphNodes = {};
 	public int count;
 
 	public GraphNode[] getNodes() {
