@@ -44,22 +44,22 @@ public class Q25_SumLists {
 
 	private static void sumListsTestCases() {
 		
-		LinkedList first = new LinkedList();
+		LinkedList firstList = new LinkedList();
 
-		first.addNode(new Node(7));
-		first.addNode(new Node(9));
-		first.addNode(new Node(6));
-		first.printList();
+		firstList.addNode(new Node(7));
+		firstList.addNode(new Node(9));
+		firstList.addNode(new Node(6));
+		firstList.printList();
 		
-		LinkedList second = new LinkedList();
+		LinkedList secondList = new LinkedList();
 
-		second.addNode(new Node(9));
-		second.addNode(new Node(0));
-		second.addNode(new Node(3));
-		second.addNode(new Node(9));
-		second.printList();
+		secondList.addNode(new Node(9));
+		secondList.addNode(new Node(0));
+		secondList.addNode(new Node(3));
+		secondList.addNode(new Node(9));
+		secondList.printList();
 		
-		LinkedList result = new LinkedList(sumLists(first.head(), second.head()));
+		LinkedList result = new LinkedList(sumLists(firstList.head(), secondList.head()));
 		result.printList();
 		
 	}
