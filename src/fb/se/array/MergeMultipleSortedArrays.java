@@ -87,4 +87,5 @@ public class MergeMultipleSortedArrays {
 			System.out.println(i);
 		}
 	}
+	//TODO will fail for one array or empty 2D arrays
 }
