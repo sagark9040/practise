@@ -4,11 +4,11 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.Stack;
 
-public class Q47_BuildOrder {
+public class Q47_BuildOrderINCOMPLETE {
 	Graph graph = new Graph();
 	Stack<GraphNode> topoStack = new Stack<GraphNode>();
 	
-	Q47_BuildOrder(Graph g){
+	Q47_BuildOrderINCOMPLETE(Graph g){
 		graph = g;
 		
 		for(GraphNode node: g.graphNodes){
