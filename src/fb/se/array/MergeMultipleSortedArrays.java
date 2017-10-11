@@ -25,8 +25,7 @@ public class MergeMultipleSortedArrays {
 	
 	public int[] merge(){
 		int n = 0;		
-		
-		
+				
 		while(n<15){			//O(n)
 			int copyElementFromArray = findSmallest(arrays); //O(k)
 			resultArray[n++] = arrays[copyElementFromArray][indices[copyElementFromArray]++];
@@ -82,6 +81,13 @@ public class MergeMultipleSortedArrays {
 	public static void main(String args[]){
 		int[][] input = {{2,4,10,12,20},{1,8,9,13,16},{3,5,10,14,15}};
 		MergeMultipleSortedArrays mergeArrays = new MergeMultipleSortedArrays(input);
+		
+		if(input == null || input.length == 0)
+			return;
+		
+		if(input.length == 1)
+			return;
+		
 		int[] res = mergeArrays.merge();
 		for(int i: res){
 			System.out.println(i);
