@@ -8,6 +8,11 @@ import java.util.ArrayList;
 
 // This question is deceptively difficult!!!!!
 
+//TODO
+//The real solution is to use a min heap. So that way my solution-
+// kn * k 				becomes
+// kn * log (k)		<-- faster because of the logarithm time it takes for comparison instead of linear time.
+
 public class MergeMultipleSortedArrays {
 	
 	int[][] arrays;
@@ -24,8 +29,13 @@ public class MergeMultipleSortedArrays {
 	}
 	
 	public int[] merge(){
+<<<<<<< HEAD
 		int n = 0;		
 				
+=======
+		int n = 0;				
+		
+>>>>>>> 421c9b60d7e1f2c5acc6cd071328bdd211f86638
 		while(n<15){			//O(n)
 			int copyElementFromArray = findSmallest(arrays); //O(k)
 			resultArray[n++] = arrays[copyElementFromArray][indices[copyElementFromArray]++];
