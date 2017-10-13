@@ -8,6 +8,10 @@ public class AllPermutationsOfString {
 		
 	// CTCI method
 	// Would show duplicates if string contains repeat characters
+	// One by one get a single character out from 0 to n-1. 
+	// Create a prefix += the character in the ith position -> 0 to n-1
+	// Whatever remains is the substring (0 to i) and (i+1) till end.
+	
 	static void permutations(String str, String prefix){
 		if(str.length()==0)
 			System.out.println(prefix);
