@@ -8,7 +8,6 @@ public class BottomRowLeftElemTree {
 	 
 	 
      public static int findBottomLeftValue(TreeNode root) {
-        if(root.left == null) return root.val;
 		
         Queue<TreeNode> children = new LinkedList<TreeNode>();
         children.add(root);
