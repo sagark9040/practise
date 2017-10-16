@@ -18,11 +18,13 @@ public class FindSecondLargestValue {
 		if(arr.length < 2)
 			return Integer.MIN_VALUE;
 		
+		// This step is key, especially the part about second largest.
 		int largest = arr[0], secondLargest = Integer.MIN_VALUE;		
 		
 		for(int i=1; i<arr.length; i++){
 			int curVal = arr[i];
 			
+			// This check is vital
 			if(curVal == largest || curVal == secondLargest)
 				continue;
 			else if(curVal > largest){
