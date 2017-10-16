@@ -1,0 +1,10 @@
+ARRAYS
+
+1)  Collections.sort(ListTypeVariable);
+	Arrays.sort(arrayTypeVariable);
+	
+2)  Test values which are recurring.
+
+3)	Test values where outputs are recurring.
+
+4)	Remember this instantiation --> new ArrayList<List<Integer>>();
