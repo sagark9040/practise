@@ -34,6 +34,9 @@ public class LC5M_LongestPalindromeSubstring {
             String tempLongest = getLongestPalinAroundThis(ch, i);
             if(tempLongest.length() > longestPalin.length())
                 longestPalin = tempLongest;
+            
+            if(i>(s.length()/2) && longestPalin.length() >= s.length()/2)
+            	break;
         }
         return longestPalin;
     }
@@ -50,6 +53,45 @@ public class LC5M_LongestPalindromeSubstring {
                 
             left--; right++;
         }
-        return tempLongestPalin;
+        
+        left = i-1; right = i;    
+        String tempLongestPalin2 = "", tempLongestPalin3 = "";
+        while(left >= 0 && right < ch.length){
+            if(ch[left] == ch[right])
+                tempLongestPalin2 = String.valueOf(ch[left]) + tempLongestPalin2 + String.valueOf(ch[right]);
+            else
+                break;
+                
+            left--; right++;
+        }
+
+        left = i; right = i+1;        
+        while(left >= 0 && right < ch.length){
+            if(ch[left] == ch[right])
+                tempLongestPalin3 = String.valueOf(ch[left]) + tempLongestPalin3 + String.valueOf(ch[right]);
+            else
+                break;
+                
+            left--; right++;
+        }
+
+        
+        if(tempLongestPalin.length() >= tempLongestPalin2.length() && tempLongestPalin.length() >= tempLongestPalin3.length())
+        	return tempLongestPalin;
+        if(tempLongestPalin2.length() >= tempLongestPalin.length() && tempLongestPalin2.length() >= tempLongestPalin3.length())
+        	return tempLongestPalin2;
+        return tempLongestPalin3;
+    }
+    
+    public static void main(String args[]){
+    	LC5M_LongestPalindromeSubstring pali = new LC5M_LongestPalindromeSubstring();
+//    	System.out.println(pali.longestPalindrome(""));
+//    	System.out.println(pali.longestPalindrome("s"));
+//    	System.out.println(pali.longestPalindrome("sb"));
+//    	System.out.println(pali.longestPalindrome("bbad"));
+//    	System.out.println(pali.longestPalindrome("sbab"));
+//    	System.out.println(pali.longestPalindrome("bsbzx"));
+//    	System.out.println(pali.longestPalindrome("aaaaa"));
+    	System.out.println(pali.longestPalindrome("babaddtattarrattatddetartrateedredividerb"));
     }
 }
