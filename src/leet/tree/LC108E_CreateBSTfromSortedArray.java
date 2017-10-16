@@ -3,7 +3,7 @@ package leet.tree;
 import ctci.Chp4_TreesAndGraphs.Tree;
 import ctci.Chp4_TreesAndGraphs.TreeNode;
 
-public class CreateBSTfromSortedArray_LC_108_E {
+public class LC108E_CreateBSTfromSortedArray {
 	public TreeNode sortedArrayToBST(int[] nums) {
 		// TC nums is empty or just one element
         if(nums.length == 0)
@@ -29,7 +29,7 @@ public class CreateBSTfromSortedArray_LC_108_E {
     }
     
     public static void main(String args[]){
-    	CreateBSTfromSortedArray_LC_108_E createBST = new CreateBSTfromSortedArray_LC_108_E();
+    	LC108E_CreateBSTfromSortedArray createBST = new LC108E_CreateBSTfromSortedArray();
     	
     	emptyArray(createBST);
     	singleElementArray(createBST);
@@ -37,17 +37,17 @@ public class CreateBSTfromSortedArray_LC_108_E {
     	
     }
 
-	private static void multiElementArray(CreateBSTfromSortedArray_LC_108_E createBST) {
-		 createBST = new CreateBSTfromSortedArray_LC_108_E();
+	private static void multiElementArray(LC108E_CreateBSTfromSortedArray createBST) {
+		 createBST = new LC108E_CreateBSTfromSortedArray();
 		Tree.printBinaryTree(createBST.sortedArrayToBST(new int[]{}));		
 	}
 
-	private static void singleElementArray(CreateBSTfromSortedArray_LC_108_E createBST) {
+	private static void singleElementArray(LC108E_CreateBSTfromSortedArray createBST) {
 		Tree.printBinaryTree(createBST.sortedArrayToBST(new int[]{1}));
 		
 	}
 
-	private static void emptyArray(CreateBSTfromSortedArray_LC_108_E createBST) {
+	private static void emptyArray(LC108E_CreateBSTfromSortedArray createBST) {
 		Tree.printBinaryTree(createBST.sortedArrayToBST(new int[]{1,2}));
 		
 	}

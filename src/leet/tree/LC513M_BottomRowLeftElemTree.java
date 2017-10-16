@@ -3,7 +3,7 @@ package leet.tree;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class BottomRowLeftElemTree {
+public class LC513M_BottomRowLeftElemTree {
 
 	 
 	 

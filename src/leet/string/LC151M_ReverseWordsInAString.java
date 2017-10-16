@@ -1,6 +1,6 @@
 package leet.string;
 
-public class ReverseWordsInAString {
+public class LC151M_ReverseWordsInAString {
 
     public static String reverseWords(String s) {
         s = s.trim().replaceAll(" +", " ");
