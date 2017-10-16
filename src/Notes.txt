@@ -8,3 +8,5 @@ ARRAYS
 3)	Test values where outputs are recurring.
 
 4)	Remember this instantiation --> new ArrayList<List<Integer>>();
+
+5) Try to add duplicates to input sequences and then reverse those inputs to see if that causes havoc.
