@@ -10,3 +10,9 @@ ARRAYS
 4)	Remember this instantiation --> new ArrayList<List<Integer>>();
 
 5) Try to add duplicates to input sequences and then reverse those inputs to see if that causes havoc.
+
+STRING
+
+1)	String rev = new StringBuilder(s).reverse().toString();
+
+2)	Palindromes can be odd or even length - BOTH!
