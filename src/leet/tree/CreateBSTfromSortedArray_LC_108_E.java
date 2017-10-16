@@ -1,4 +1,4 @@
-package leet;
+package leet.tree;
 
 import ctci.Chp4_TreesAndGraphs.Tree;
 import ctci.Chp4_TreesAndGraphs.TreeNode;
