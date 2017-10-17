@@ -1,4 +1,4 @@
-package fb.se;
+package fb.se.trees;
 
 import java.util.HashMap;
 import java.util.Map;
