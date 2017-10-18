@@ -9,9 +9,11 @@ public class LC125M_StringValidPalindrome {
 	// Single non-letterOrNumber
 	// Regular input with non-letterOrNumber
 	// Regular with letters and numbers
-	
-	
 
+////////////////////////////////////////////////////////////////////////////////////
+	// 					FOR CONSTANT SPACE SOLUTION
+	// 				fb.se.string.StringValidPalindrome;
+////////////////////////////////////////////////////////////////////////////////////	
 	public boolean isPalindrome(String s){
 		s = formatString(s);
         
