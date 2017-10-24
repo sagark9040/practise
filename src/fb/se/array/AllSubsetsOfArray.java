@@ -6,35 +6,31 @@ import java.util.List;
 public class AllSubsetsOfArray {
 	
 	public List<List<Integer>> subsets(int[] nums) {
+		List<List<Integer>> allList = new ArrayList<List<Integer>>();
 		
+		//Since 'n' number of items will result in 2^n possibilities
 		int n = nums.length;
-		 
-		List<List<Integer>> allLists = new ArrayList<List<Integer>>();
-		System.out.println(1<<n);
-        for (int i = 0; i < (1<<n); i++)
-        { 
-        	System.out.println("Cur i:" + i + " -------------- " + Integer.toBinaryString(i));
-        	List<Integer> list = new ArrayList<Integer>();
-            for (int j = 0; j < n; j++){
- 
-            	System.out.println(i + " & " + (1 << j)  + " --> "+(i & (1 << j)));
-                if ((i & (1 << j)) > 0)
-                	list.add(nums[j]);
-            }
+		n = (int) Math.pow(2, n);
 
-            
-            
-            System.out.print("---------------------------------------- [ ");
-            for(int l: list)
-            	System.out.print(l + " ");
-            System.out.println("] \n\n");
-            allLists.add(list);
-        }
-		return allLists;
+		//Run all the 2^n possibilities
+		for(int i=0; i<n; i++){
+			List<Integer> list = new ArrayList<Integer>();
+			
+			for(int j=0; j<nums.length; j++)
+				if((i & (1 << j )) > 0){
+					list.add(nums[j]);
+					System.out.print(nums[j]);
+				}
+			
+			System.out.println();
+			allList.add(list);
+		}
+		
+		return allList;
 	}
 	public static void main(String args[]){
 		AllSubsetsOfArray all = new AllSubsetsOfArray();
-		int[] arr = {1,2,3, 4};
+		int[] arr = {1,2,3,4};
 		all.subsets(arr);				
 	}
 }
