@@ -1,4 +1,4 @@
-package leet.string;
+package g.leet;
 
 /*
 
