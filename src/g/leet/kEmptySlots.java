@@ -19,8 +19,13 @@ public class kEmptySlots {
 		if (flowers.length < 2)
 			return -1;
 		
+		
+//		[6,5,8,9,7,1,10,2,3,4]
+//				2
 		for(int i=0; i<flowers.length-1; i++){
 			for(int j=i+1; j<flowers.length; j++){
+				
+				int first = flowers[i], second = flowers[j];
 				if(checkSlots(flowers[j], flowers[i], k)){
 				//if(flowers[j]-flowers[i]-1 == k)
 					return j+1;
@@ -35,12 +40,15 @@ public class kEmptySlots {
 		slots.add(i);
 		slots.add(j);
 		
-		if(j-i<=1)
+		if(i == j || i == j+1 || j == i+1)
 			return false;
 		
+		int countEmptySlots = 0;
 		for(int slot = i+1; slot < j; slot++){			
-			if(!slots.contains(slot))
+			if(!slots.contains(slot) && countEmptySlots >= k)
 				return true;
+			
+			countEmptySlots++;
 		}
 		return false;
 	}
