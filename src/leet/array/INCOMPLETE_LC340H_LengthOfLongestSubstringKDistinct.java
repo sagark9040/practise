@@ -3,7 +3,7 @@ package leet.array;
 import java.util.HashMap;
 import java.util.Map;
 
-public class LC340H_LengthOfLongestSubstringKDistinct {
+public class INCOMPLETE_LC340H_LengthOfLongestSubstringKDistinct {
 	
 	//322 pm
 	
@@ -92,7 +92,7 @@ public class LC340H_LengthOfLongestSubstringKDistinct {
 	    }
 	    
 	    public static void main(String args[]){
-	    	LC340H_LengthOfLongestSubstringKDistinct len = new LC340H_LengthOfLongestSubstringKDistinct();
+	    	INCOMPLETE_LC340H_LengthOfLongestSubstringKDistinct len = new INCOMPLETE_LC340H_LengthOfLongestSubstringKDistinct();
 //	    	System.out.println(len.lengthOfLongestSubstringKDistinct("a", 1));
 //	    	System.out.println(len.lengthOfLongestSubstringKDistinct("eceba", 2));
 	    	System.out.println(len.lengthOfLongestSubstringKDistinct("eceebba", 3));
