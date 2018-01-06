@@ -1,6 +1,6 @@
 package g.leet;
 
-public class TrappingRainWater {
+public class LC42H_TrappingRainWater {
 	
 	//LOOKED AT THIS SOLUTION, UNDERSTOOD IT ONLINE!! 
 	
