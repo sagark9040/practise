@@ -1,6 +1,9 @@
 package leet.array;
 
-public class GameOfLife {
+//Companies-Google
+//Tags-Array
+
+public class LC289M_GameOfLife {
 	
 	 // In-place solution uses binary bits to compute within themselves and shift bits for the new result.
 	
@@ -93,7 +96,7 @@ public class GameOfLife {
     	int[][] inp = {{1,1},{1,0}};
     	
     	inp = new int[][]{{0,0,0,0,0},{0,0,1,0,0},{0,0,1,0,0},{0,0,1,0,0},{0,0,0,0,0}};
-    	GameOfLife game = new GameOfLife();
+    	LC289M_GameOfLife game = new LC289M_GameOfLife();
     	game.gameOfLife(inp);
     }
 	
