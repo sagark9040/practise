@@ -1,6 +1,6 @@
 package leet.string;
 
-public class OneEditDistance {
+public class LC161M_OneEditDistance {
 	 
     //1020 pm
     //One edit could be - either insert, update or delete only once. 
@@ -36,7 +36,7 @@ public class OneEditDistance {
     }
     
     public static void main(String args[]) {
-    	OneEditDistance oneEdit = new OneEditDistance();
+    	LC161M_OneEditDistance oneEdit = new LC161M_OneEditDistance();
     	
     	System.out.println(oneEdit.isOneEditDistance("a", "ac"));
 //    	System.out.println(oneEdit.isOneEditDistance("", "sagar"));
