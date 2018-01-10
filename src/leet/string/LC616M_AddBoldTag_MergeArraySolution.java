@@ -1,4 +1,4 @@
-package leet.array;
+package leet.string;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class AddBoldTag_MergeArraySolution {
+public class LC616M_AddBoldTag_MergeArraySolution {
 	
     public static void main(String args[]) {
     	String s = "aaabbcc";
@@ -14,7 +14,7 @@ public class AddBoldTag_MergeArraySolution {
 		String[] dict = {"qr","zj","so","rb","km","yz","zz","vo","qx","ef","vx","kc","wt","pk"}; 
 				
 				//dict = {"aaa","aab","bc"};
-		AddBoldTag_MergeArraySolution merge = new AddBoldTag_MergeArraySolution();
+		LC616M_AddBoldTag_MergeArraySolution merge = new LC616M_AddBoldTag_MergeArraySolution();
 		System.out.println(merge.addBoldTag(s, dict));				
     }
     
