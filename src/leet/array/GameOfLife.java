@@ -2,12 +2,17 @@ package leet.array;
 
 public class GameOfLife {
 
-	 int[][] origBoard;
+	 int[][] origBoard, neigh;
 	    public void gameOfLife(int[][] board) {
 	    	
 	    	print(board);
-	    	
-	        origBoard = board;
+
+	    	origBoard = new int[5][5];
+	    	for(int i=0; i<board.length; i++)
+	    		  for(int j=0; j<board[i].length; j++)
+	    			  origBoard[i][j]=board[i][j];
+	        
+//	        System.out.println("---" + origBoard[1][2]);
 	        
 	        // Empty board
 	        if(board.length == 0) {
@@ -26,9 +31,7 @@ public class GameOfLife {
 	                
 	            }                        
 	        }   
-	        
 	        print(board);
-	        print(new int[][]{{0,0,0,0,0},{0,0,0,0,0},{0,1,1,1,0},{0,0,0,0,0},{0,0,0,0,0}});
 	    }
 	    
 	    private void print(int[][] board) {
@@ -48,15 +51,21 @@ public class GameOfLife {
 	        for(int rowShift=-1; rowShift<=1; rowShift++) {
 	            for(int colShift=-1; colShift<=1; colShift++) {
 	                
+//	            	if(r == 1 && c == 3)
+//	            		System.out.print("  r/c[" + (r+rowShift) + "][" + (c+colShift) + "]:" + origBoard[r+rowShift][c+colShift]);
+	            	
 	                // Check valid columns
 	                if(validCell(r+rowShift, c+colShift)) {
-	                    sumOfNeig += origBoard[r+rowShift][c+colShift];    
+	                	int origVal = origBoard[r+rowShift][c+colShift];
+	                    sumOfNeig += origVal;    
 	                }                
 	            }
 	        }
 	        
 	        sumOfNeig -= origBoard[r][c];
-	                
+//            @SuppressWarnings("unused")
+//			int s = sumOfNeig;
+//            s += 0;
 	        return applyRules(sumOfNeig, origBoard[r][c]);
 	    }
 	    
