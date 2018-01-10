@@ -1,6 +1,9 @@
 package leet.array;
 
 public class GameOfLife {
+	
+	 // In-place solution uses binary bits to compute within themselves and shift bits for the new result.
+	
 
 	 int[][] origBoard, neigh;
 	    public void gameOfLife(int[][] board) {
