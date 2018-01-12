@@ -22,6 +22,7 @@ public class LC485E_MaximumConsecutiveOnes {
 	// [101]
 	// [1100111]
 	// [1110011]
+
 	*/
 	public int findMaxConsecutiveOnes(int[] nums) {
 		int maxCount = 0, curCount = 0;
