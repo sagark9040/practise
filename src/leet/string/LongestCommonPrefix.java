@@ -1,9 +1,18 @@
 package leet.string;
 
 public class LongestCommonPrefix {
+	
+	// Common between how many array strings?
+	// TCs
+	// Empty array
+	// Unequal number of length
+	// Equal lengths
+	// 
+	
 	public String longestCommonPrefix(String[] strs) {
-    // Write a function to find the longest common prefix string amongst an array of strings.
 
+
+		
 
 		
 		return "";
