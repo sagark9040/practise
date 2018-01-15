@@ -27,7 +27,7 @@ Output : "ap"
 		if (minLength == 0)
 			return "";
 		
-		for (int l=minLength; l>=1; l--) {
+		for (int l=minLength; l>=1; l--) { ///   						<--- Can probably use binary search here !!!!!!  Algo changes to O(log L x N) ... will matter if L == N 
 			boolean isLongestPrefix = true;
 			String sub = strs[0].substring(0, l);
 			
