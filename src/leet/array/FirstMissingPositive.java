@@ -18,18 +18,18 @@ public class FirstMissingPositive {
 		int largest = Integer.MIN_VALUE;
 		
 		for(int num: nums) {
-			largest = largest < num ? num : largest;
+			largest = largest < num ? num : largest;             		// IMPORTANT TO CALCULATE THIS FIRST
 		}
 		boolean[] status = new boolean[largest+1];
 		status[0] = true;
 		
 		for(int num: nums) {
-			if (num > 0)
+			if (num > 0)		// THIS IS IMPORTANT AS THE STATUS OF NEG NUMBERS WON'T BE CONSIDERED.
 				status[num] = true;
 			largest = largest < num ? num : largest;
 		}
 		
-		for(int i=1; i<=largest; i++) {
+		for(int i=1; i<=largest; i++) {		// LOOP SHOULD RUN ONLY POSITIVES 
 			if (!status[i])
 				return i;
 		}
