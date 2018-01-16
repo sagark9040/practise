@@ -33,7 +33,7 @@ return 2.
 		int[] count = new int[256];
 		
 		for(int i=0; i<s.length(); i++) {
-			count[s.charAt(i)]++;
+			count[s.charAt(i)]++;			// DO DRY RUNS!!!!!!!!!!
 		}
 		
 		for(int i=0; i<s.length(); i++) {
