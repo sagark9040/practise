@@ -21,7 +21,7 @@ public class INCOMPLETE_LC340H_LengthOfLongestSubstringKDistinct {
 		
 	    Map<Character, Integer> charCount = new HashMap<Character, Integer>();
 	    
-		public int lengthOfLongestSubstringKDistinct(String s, int k) {
+		public int lengthOfLongestSubstringKDistinctOLD(String s, int k) {
 			
 			if (s.length() < 1 || k == 0)
 				return 0;
@@ -95,7 +95,7 @@ public class INCOMPLETE_LC340H_LengthOfLongestSubstringKDistinct {
 	    	INCOMPLETE_LC340H_LengthOfLongestSubstringKDistinct len = new INCOMPLETE_LC340H_LengthOfLongestSubstringKDistinct();
 //	    	System.out.println(len.lengthOfLongestSubstringKDistinct("a", 1));
 //	    	System.out.println(len.lengthOfLongestSubstringKDistinct("eceba", 2));
-	    	System.out.println(len.lengthOfLongestSubstringKDistinct("eceebba", 3));
+	    	System.out.println(len.lengthOfLongestSubstringKDistinct("bacc", 2));
 //	    	System.out.println(len.lengthOfLongestSubstringKDistinct("eceebba", 0));
 //	    	System.out.println(len.lengthOfLongestSubstringKDistinct("", 3));
 //	    	System.out.println(len.lengthOfLongestSubstringKDistinct("aaaaaaaaaa", 3));
@@ -103,5 +103,50 @@ public class INCOMPLETE_LC340H_LengthOfLongestSubstringKDistinct {
 //	    	System.out.println(len.lengthOfLongestSubstringKDistinct("aba", 1));
 //	    	System.out.println(len.lengthOfLongestSubstringKDistinct("bacc", 2));
 	    }
-
+	    
+public int lengthOfLongestSubstringKDistinct(String s, int k) {
+	        
+	        // TCs max = k, max = start, max = end, max = middle
+	        // multiple maxes
+	        // k = 0, 1, 10
+	        // string is normal, empty and one letter long
+	        
+	        if(k == 0 || s == null || s.length() == 0)
+	            return 0;
+	        if(s.length() == 1)
+	            return 1;
+	        
+	        s = s.toLowerCase();
+	        
+	        int count = 1, start = 0, end = 0, longest = 0;
+	        int[] counter = new int[256];
+	        counter[s.charAt(0)] = 1;
+	        
+	        //eceba .. k = 2 .. ece
+	        
+	        for(int i=1; i<s.length(); i++) {
+	            char curChar = s.charAt(i);
+	            
+	            // Either the count is lower than k, or if it is k then the char is already present
+	            if(count < k || (count == k && counter[curChar] > 0)) {
+	                if (counter[curChar] == 0)
+	                    count++;
+	                
+	            } else { // Counter is equal to k, then we change the start position.
+	                
+	                while (count >= k && start < s.length()) {  // CRUCIAL TO PUT A CONDITION TO START
+	                    counter[start]--;                       // CHANGED TO START AFTER DRY RUN
+	                    if (counter[start] == 0)
+	                        count --;
+	                    start++;
+	                }        
+	                
+	                count++;            // ADDED THIS AFTER DRY RUN
+	            }
+	            counter[curChar]++;
+	            end = i;
+	            longest = longest < (end - start) ? end - start : longest;                
+	        }
+	        return longest+1;
+	    }
 }
