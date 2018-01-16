@@ -17,7 +17,7 @@ public class LC26E_RemoveDuplicatesInSortedArray {
 		 for(int i=1; i<nums.length; i++) {
 			 int cur = nums[i];
 			 
-			 if(cur != prev) {
+			 if(cur != prev) { /// BE CAREFUL WITH THIS PART BELOW 21. DON'T WANNA UPDATE LASTUNIQUE TOO SOON.
 				 nums[lastUnique] = cur;
 				 lastUnique++;	 count++;	
 			 }
