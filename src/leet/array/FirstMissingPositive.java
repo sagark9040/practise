@@ -46,26 +46,26 @@ public class FirstMissingPositive {
 	// CONSTANT SPACE BUT NOT REPEATING NUMBERS
 	
 	public int firstMissingPositive (int[] nums) {
-		if(nums == null || nums.length == 0)
-			return 1;
+//		if(nums == null || nums.length == 0)
+//			return 1;
+//		//-1, 4, 2, 1, 9, 10
+//		int i = 0;
+//		for (int num: nums) {			
+//
+//			if(num > 0 && num < nums.length && nums[nums[i] - 1] != nums[i]) {
+//				nums = swap(nums, num, i); 
+//				
+//			}
+//			
+//			i++;
+//		}
+//		//-1, 2, 1, 4, 9, 10
+//		for (i=0; i<nums.length; i++) {
+//			if(nums[i] != i+1)
+//				return i+1;
+//		}
 		
-		int i = 0;
-		for (int num: nums) {			
-			
-			if(num > 0 && i != num-1 && num < nums.length) {
-				nums = swap(nums, num, i); 
-				
-			}
-			
-			i++;
-		}
-		
-		for (i=0; i<nums.length; i++) {
-			if(nums[i] != i+1)
-				return i+1;
-		}
-		
-		return nums[nums.length] + 1;
+		return nums[nums.length-1] + 1;
 	}
 	
 	private int[] swap(int[] nums, int num, int pos) {
@@ -77,7 +77,7 @@ public class FirstMissingPositive {
 
 	public static void main (String args[]) {
 		
-		int[] arr = {2}; // {3,4,-1,1};
+		int[] arr = {-1,4,2,1,9,10}; // {1}; // {3,4,-1,1};
 		FirstMissingPositive first = new FirstMissingPositive();
 		System.out.println(first.firstMissingPositive(arr));
 	}
