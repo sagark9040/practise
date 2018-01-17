@@ -1,6 +1,6 @@
 package leet.tree;
 
-public class ClosestValueInBST {
+public class LC270E_ClosestValueInBST {
 
 	double closestGap = Double.MAX_VALUE;
 	int closestNodeVal = 0;
