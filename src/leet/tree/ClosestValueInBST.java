@@ -2,7 +2,7 @@ package leet.tree;
 
 public class ClosestValueInBST {
 
-	double closestGap = Integer.MAX_VALUE;
+	double closestGap = Double.MAX_VALUE;
 	int closestNodeVal = 0;
 	
 	// Brute Force
