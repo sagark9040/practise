@@ -12,23 +12,18 @@ Note: If the given node has no in-order successor in the tree, return null.
 Java	
 
 
-1
 
-2
- * Definition for a binary tree node.
-3
- * public class TreeNode {
-4
- *     int val;
-5
- *     TreeNode left;
-6
- *     TreeNode right;
-7
- *     TreeNode(int x) { val = x; }
-8
- * }
-9
+
+
+  Definition for a binary tree node.
+
+  public class TreeNode {
+      int val;
+      TreeNode left;
+      TreeNode right;
+      TreeNode(int x) { val = x; }
+  }
+
  */
 
 //Thoughts 
@@ -43,11 +38,28 @@ Java
 //p not present
 //LinkedList as tree, p somewhere there
 
-public class InOrderSuccessor {
-
+public class LC285M_InOrderSuccessor {
+	boolean isNext = false;
+	TreeNode nextElem = null;
     public TreeNode inorderSuccessor(TreeNode root, TreeNode p) {
-		return p;
+    	if (root == null || p == null)
+    		return null;
+    	
+    	inOrdeSuccessorUtil(root, p);
+    	return nextElem;
+    }
+    public void inOrdeSuccessorUtil(TreeNode root, TreeNode p) {
 
+    	inorderSuccessor(root.left, p);
+    	if (isNext) {
+    		nextElem = root;
+    		isNext = false;
+    	}
+
+    	if (root == p) {
+    		isNext = true;
+    	}
+    	inorderSuccessor(root.right, p);
     }
     
     public static void main(String args[]) {
@@ -62,8 +74,14 @@ public class InOrderSuccessor {
     	treeNode.right.right = new TreeNode(7);
     	treeNode.right.right.right = new TreeNode(8);
     	
-    	Tree tree = new Tree();
     	printBinaryTree(treeNode, 0);
+    	System.out.println();
+    	LC285M_InOrderSuccessor inOrder = new LC285M_InOrderSuccessor();
+    	
+    	TreeNode p = treeNode.right.right.right;
+    	TreeNode next = inOrder.inorderSuccessor(treeNode, p);
+		if(next != null)
+    		System.out.println("P -->" + p.data + " Next-->" + next.data);
     }
     
     public static void printBinaryTree(TreeNode root, int level){		
