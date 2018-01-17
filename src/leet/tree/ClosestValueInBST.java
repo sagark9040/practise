@@ -27,6 +27,25 @@ public class ClosestValueInBST {
     	
     	closestValueUtil(root.right, target);
     }
+    
+    public void closestValueUtilEfficient(TreeNode root, double target) {
+        
+    	if(root == null)
+    		return;
+
+    	//double leftGap = 0, rightGap = 0;
+    	double gap = Math.abs(root.val - target);
+    	if (gap < closestGap) {
+    		closestGap = gap;
+    		closestNodeVal = root.val;
+    	}
+    	
+    	if (root.val > target)
+    		closestValueUtilEfficient(root.left, target); 
+    	else	
+    		closestValueUtilEfficient(root.right, target); 
+    	
+    }
 
 	
 }
