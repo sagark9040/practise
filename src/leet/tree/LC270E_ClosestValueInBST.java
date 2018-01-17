@@ -1,5 +1,7 @@
 package leet.tree;
 
+// PRETTY SIMPLE SOLUTION WITH SECOND ATTEMPT MAKING IT ULTIMATELY SUCCESSFUL.
+
 public class LC270E_ClosestValueInBST {
 
 	double closestGap = Double.MAX_VALUE;
@@ -46,17 +48,4 @@ public class LC270E_ClosestValueInBST {
     		closestValueUtilEfficient(root.right, target); 
     	
     }
-
-	
 }
-/**
- * Definition for a binary tree node.
- * public class TreeNode {
- *     int val;
- *     TreeNode left;
- *     TreeNode right;
- *     TreeNode(int x) { val = x; }
- * }
- */
-
-
