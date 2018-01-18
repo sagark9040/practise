@@ -1,4 +1,4 @@
-package leet;
+package leet.sortingAndSearching;
 
 public class LC200M_NumberOfIslands {	
 
