@@ -3,7 +3,7 @@ package leet.graph;
 import java.util.HashSet;
 import java.util.Set;
 
-public class RedundantConenction2 {
+public class INCOMPLETE_RedundantConenction2 {
 
 	public int[] findRedundantDirectedConnection(int[][] edges) {
 		int[] res = new int [2];
