@@ -16,7 +16,7 @@ public class LRUCache {
     	
     	capacity = cap;    	
         map = new HashMap<Integer, Integer>();
-        q = new LinkedList();
+        q = new Queue();
         
     }
     
