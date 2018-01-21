@@ -1,6 +1,6 @@
 package leet.array;
 
-public class LC418M_CountSentencesScreenFitting {
+public class LC418M_SentenceScreenFittingCount {
 	    // empty rows or cols then return 0, empty sentence return 0
 	    // count the number of words put on screen, then divide it with sentence length to get the totalSentences
 	    // iterate row by row. every row start has a balance cols = cols, we go on reducing it.
@@ -37,7 +37,7 @@ public class LC418M_CountSentencesScreenFitting {
     }
     
     public static void main(String args[]) {
-    	LC418M_CountSentencesScreenFitting count = new LC418M_CountSentencesScreenFitting();
+    	LC418M_SentenceScreenFittingCount count = new LC418M_SentenceScreenFittingCount();
     	// System.out.println(count.wordsTyping(new String[] {"sam",  "i",  "am"}, 4, 7));
     			
     	System.out.println(count.wordsTyping(new String[] {"a","b","e"}, 20000, 20000));
