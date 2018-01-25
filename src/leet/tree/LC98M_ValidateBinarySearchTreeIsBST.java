@@ -21,6 +21,11 @@ public class LC98M_ValidateBinarySearchTreeIsBST {
 				
 		if(root.val < min || root.val > max)
 			return false;
+		if((root.left != null && root.left.val == root.val) || 		// THIS STEP IS THE EXTREMEST CORNER CASE !!!!!!!!!! 
+				(root.right != null && root.right.val == root.val) || 
+					(root.left != null && root.left.val > root.val) || 
+						(root.right != null && root.right.val < root.val))
+			return false;
 
 		
 		int minLeft = min;
@@ -40,6 +45,10 @@ public class LC98M_ValidateBinarySearchTreeIsBST {
 		node.right = new TreeNode(15);
 		node.left.right = new TreeNode(9);
 		node.right.left = new TreeNode(12);
+		System.out.println(valid.isValidBST(node));		
+		
+		node = new TreeNode(Integer.MIN_VALUE);
+		node.left = new TreeNode(Integer.MIN_VALUE);
 		System.out.println(valid.isValidBST(node));
 	}
 }
