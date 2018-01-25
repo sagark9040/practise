@@ -10,13 +10,18 @@ public class INCOMPLETE_MergeBinaryTrees {
 			return t1;
 		
         if(getDepth(t2) > getDepth(t1))
-        	return mergeTrees(t2, t1);
+        	return mergeTreesUtil(t2, t1);
         
         TreeNode ans = new TreeNode(t1.val + t2.val);
         
         return null;
     }
 	
+	private TreeNode mergeTreesUtil(TreeNode t2, TreeNode t1) {
+		
+		return null;
+	}
+
 	public int getDepth (TreeNode root) {
 		if(root == null)
 			return 0;
