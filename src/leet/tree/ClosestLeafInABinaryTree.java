@@ -14,30 +14,67 @@ public class ClosestLeafInABinaryTree {
 	 * }
 	 */
 	
+	// APPROACH 1
+	
 	// Thoughts ... I'll do BFS and then keep a variable called nearest leaf if the child nodes of it are null
 	// Either the k node is found before above or after above. The first time both are found, return the nearestLeaf.
 	// What if k itself is a leaf? 
+	
+	// APPROACH 2
+	
+	// Do a DFS. Get a leaf node before the search node. If the search node itself is a leaf, then return that.
+	// 
+	
+	// TCs
+	// Root itself is a leaf and also k
+	// k itself is a leaf, but not root
+	// k on one side, closes leaf on the other side
+	// k and closest both on one side.
+	// close before k
+	// k before closest
+
+	
+	int steps = -1;
+	int lastLeaf = 0;
+	boolean rootFound = false;
+	
+	class NearestLeaf {
+		public int steps;
+		public int leafVal;
+		
+		NearestLeaf() {
+			
+		}
+		
+		NearestLeaf(int s, int l) {
+			steps = s;
+			leafVal = l;
+		}
+	}
+	
+	NearestLeaf nearestLeaf = new NearestLeaf();
 	
     public int findClosestLeaf(TreeNode root, int k) {
     	if (root == null)
     		return -1;
     	
-    	Queue<TreeNode> q = new LinkedList<TreeNode>();
-    	q.add(root);
+    	findClosestLeafUtil(root, k);
     	
-    	TreeNode nearestLeaf;
-    	
-    	while(!q.isEmpty()) {
-    		TreeNode curNode = q.poll();
-    		
-    		if(curNode.left == null && curNode.right == null)
-    			nearestLeaf = curNode;
-    		
-    	}
-    
-    	
-    	return -1;    		
+    	return nearestLeaf.leafVal;    		
 	}
+    
+    public void findClosestLeafUtil(TreeNode root, int k) {
+    	if(root == null)
+    		return;
+    	
+    	steps++;
+    	findClosestLeafUtil(root.left, k);
+    	    	
+    	steps++;
+    	findClosestLeafUtil(root.right, k);
+    	
+    	
+    }
 }
 
 /*

@@ -3,7 +3,7 @@ package leet.string;
 import java.util.ArrayList;
 import java.util.List;
 
-public class WordBreak {
+public class INCOMPLETE_WordBreak {
 	
 List<String> wordDict = new ArrayList<String>();
     
@@ -58,7 +58,7 @@ List<String> wordDict = new ArrayList<String>();
 		l.add("b");
 		l.add("cd");
 		l.add("abc");
-		WordBreak wb = new WordBreak();
+		INCOMPLETE_WordBreak wb = new INCOMPLETE_WordBreak();
 		System.out.println(wb.wordBreak("abcd", l));
 	}
 }
