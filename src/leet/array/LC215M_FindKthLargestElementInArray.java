@@ -3,7 +3,7 @@ package leet.array;
 import java.util.Collections;
 import java.util.PriorityQueue;
 
-public class FindKthLargestElementInArray {
+public class LC215M_FindKthLargestElementInArray {
 	
 	// DRY RUN KAR RE BABA!!!
 	
