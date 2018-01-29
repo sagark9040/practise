@@ -24,7 +24,7 @@ public class LC663M_EqualTreePartition {
     		return false;
     	
     	sum = getAllSums(root);
-    	if(sum == 0)
+    	if(sum == 0)													//	<--- THESE TWO CHECKS ARE VITAL FOR SUM = 0 AND SUM IS EVEN
     		return map.containsKey(sum) && map.get(sum) > 1;
         return sum%2 == 0 && map.containsKey(sum/2);
 	}
