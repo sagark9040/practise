@@ -23,6 +23,10 @@ public class LC508M_MostFrequentSubtreeSum {
     public int[] findFrequentTreeSum(TreeNode root) {
     	
     	sumOfSubtree(root);
+    	return computeMaxFreq();
+	}
+    
+    public int[] computeMaxFreq() {
     	int maxCount = Integer.MIN_VALUE;
     	
     	for(Integer key:sumCount.keySet()) {
@@ -44,7 +48,7 @@ public class LC508M_MostFrequentSubtreeSum {
     	    }
     	}
     	return arr;
-	}
+    }
     
     public int sumOfSubtree(TreeNode root) {
     	if(root == null) return 0;
