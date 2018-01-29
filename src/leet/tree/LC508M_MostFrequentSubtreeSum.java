@@ -40,6 +40,10 @@ public class LC508M_MostFrequentSubtreeSum {
     			freq.add(key);
     	}
     	
+    	return convertListToArray(freq);
+    }
+
+    public int[] convertListToArray(ArrayList<Integer> freq) {
     	int[] arr = new int[freq.size()];				// CONVERT ARRAYLIST TO ARRAYS ... DIDN'T KNOW THE SHORTHAND
 
     	for(int i = 0; i < freq.size(); i++) {
