@@ -60,6 +60,9 @@ List<String> wordDict = new ArrayList<String>();
 		l.add("abc");
 		INCOMPLETE_WordBreak wb = new INCOMPLETE_WordBreak();
 		System.out.println(wb.wordBreak("abcd", l));
+		
+		String s = "saga";
+		s.substring(5);		
 	}
 }
 
