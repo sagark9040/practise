@@ -43,7 +43,7 @@ public class LC279M_MinPerfectSquares {
         return min;
     }
 
-    public boolean isPerfectSquare(int n) {
+    public boolean isPerfectSquare(int n) { 	//						<--- This method is USEFUL!!!
         double sqrt = Math.sqrt(n);
         int x = (int) sqrt;
         return (Math.pow(sqrt,2) == Math.pow(x,2)) ? true : false;
