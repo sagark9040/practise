@@ -5,10 +5,12 @@ import java.util.LinkedHashMap;
 public class LC362M_DesignHitCounter {
 
 	//430p
-	//BF..
+	//BF..	
 	//Store all the values as they come.. 1,1,2,2,200,250,300,301,302..
 	//O(log n) find the countVal and go left till minus300 
 	//LinkedHashMap-time,count  
+	
+	//THERE ARE QUESTIONS TO ASK THE INTERVIEWER HERE IN TERMS OF DESIGN
 	
 	
 	LinkedHashMap<Integer, Integer> hitsCounter;
