@@ -1,5 +1,7 @@
 package leet.array;
 
+import java.util.HashMap;
+
 public class LC766E_ToePlitzMatrix {
 public boolean isToeplitzMatrix(int[][] matrix) {
         
