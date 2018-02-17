@@ -1,9 +1,6 @@
 package leet.tree;
 
-import java.util.LinkedList;
-import java.util.Queue;
-
-public class ClosestLeafInABinaryTree {
+public class LC742M_ClosestLeafInABinaryTree {
 	/**
 	 * Definition for a binary tree node.
 	 * public class TreeNode {
@@ -33,48 +30,73 @@ public class ClosestLeafInABinaryTree {
 	// close before k
 	// k before closest
 
-	
-	int steps = -1;
-	int lastLeaf = 0;
-	boolean rootFound = false;
-	
-	class NearestLeaf {
-		public int steps;
-		public int leafVal;
-		
-		NearestLeaf() {
-			
-		}
-		
-		NearestLeaf(int s, int l) {
-			steps = s;
-			leafVal = l;
-		}
-	}
-	
-	NearestLeaf nearestLeaf = new NearestLeaf();
-	
-    public int findClosestLeaf(TreeNode root, int k) {
-    	if (root == null)
-    		return -1;
-    	
-    	findClosestLeafUtil(root, k);
-    	
-    	return nearestLeaf.leafVal;    		
-	}
-    
-    public void findClosestLeafUtil(TreeNode root, int k) {
-    	if(root == null)
-    		return;
-    	
-    	steps++;
-    	findClosestLeafUtil(root.left, k);
-    	    	
-    	steps++;
-    	findClosestLeafUtil(root.right, k);
-    	
-    	
+	class Leaf {
+        int value;
+        int counter;
+        Leaf(int v, int c) {
+            value = v;
+            counter = c;
+        }
     }
+    
+    Leaf prevLeaf;
+    Leaf nearestLeaf;
+    int counter = 0, kPos = Integer.MIN_VALUE;
+    public int findClosestLeaf(TreeNode root, int k) {
+        dfs(root, k);
+        return nearestLeaf != null ? nearestLeaf.value : 0;
+    }
+    
+    public void dfs(TreeNode root, int k) {
+        if(root == null) return;
+
+        
+        counter++;
+        if(root.val == k) {
+            kPos = counter;
+        }
+        if(root.left == null && root.right == null) {
+            prevLeaf = new Leaf(root.val, counter);
+        }
+        
+        if(kPos != Integer.MIN_VALUE && prevLeaf != null) {
+                int gap = Math.abs(kPos - prevLeaf.counter);
+                if(nearestLeaf == null || nearestLeaf.counter > Math.abs(kPos - prevLeaf.counter)) { 
+                    nearestLeaf = new Leaf(prevLeaf.value, gap);
+                }
+        }
+        dfs(root.left, k);
+        counter++;
+        if(root.val == k) {
+            kPos = counter;
+        }
+        if(root.left == null && root.right == null) {
+            prevLeaf = new Leaf(root.val, counter);
+        }
+        
+        if(kPos != Integer.MIN_VALUE && prevLeaf != null) {
+                int gap = Math.abs(kPos - prevLeaf.counter);
+                if(nearestLeaf == null || nearestLeaf.counter > Math.abs(kPos - prevLeaf.counter)) { 
+                    nearestLeaf = new Leaf(prevLeaf.value, gap);
+                }
+        }
+        
+        dfs(root.right, k);
+        
+        
+    }
+    
+    public static void main(String args[]) {
+    	TreeNode root = new TreeNode(1);
+    	root.left = new TreeNode(3);
+    	root.left.left = new TreeNode(4);
+    	root.left.left.left = new TreeNode(7);
+    	root.right = new TreeNode(2);
+    	
+    	LC742M_ClosestLeafInABinaryTree c = new LC742M_ClosestLeafInABinaryTree();
+    	c.findClosestLeaf(root, 4);
+    }
+    
 }
 
 /*
