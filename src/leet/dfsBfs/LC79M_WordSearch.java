@@ -54,12 +54,12 @@ public class LC79M_WordSearch {
 		    		return true;
 		    	}
 
-		        visited[r][c] = true;
+		        visited[r][c] = true;				/// 									I M P O R T A N T !!!!!!!!!!!!!!!!
 		        cur[pos] = board[r][c];
 		        for(int[] n:neighbors()) {
 		            int newRow = r+n[0], newCol = c+n[1];
 
-		            //KEY FOR AVOIDING ARRAY INDEX OUT OF BOUNDS
+		           																			//KEY FOR AVOIDING ARRAY INDEX OUT OF BOUNDS
 		            if(wordFound || pos == word.length-1) {
 			    		return true;
 			    	}
@@ -70,7 +70,7 @@ public class LC79M_WordSearch {
 		            }
 	                
 		        }
-		        visited[r][c] = false;              // backtracking
+		        visited[r][c] = false;              // backtracking			///			 	I M P O R T A N T !!!!!!!!!!!!!!!!
 		        return false;
 		    }
 		    
