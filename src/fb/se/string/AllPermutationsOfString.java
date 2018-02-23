@@ -40,7 +40,7 @@ public class AllPermutationsOfString {
 	int[] count;
 	char[] characters;
 	
-	void createArray(String str){
+	void allPermutationsWithRepeatCharacters(String str){
 		for(Character c: str.toCharArray()){
 			if(characterCount.containsKey(c))
 				characterCount.put(c, characterCount.get(c)+1);
@@ -57,6 +57,8 @@ public class AllPermutationsOfString {
 			characters[i] = entry.getKey();
 			i++;
 		}
+		
+		allPermutationsWithRepeatCharacters(str, new char[str.length()], 0);
 	}
 	
 	void allPermutationsWithRepeatCharacters(String str, char[] result, int level){
@@ -79,16 +81,9 @@ public class AllPermutationsOfString {
 	
 	public static void main(String args[]){
 		
-		String strUnique = "abc";
-		System.out.println("All permutations of unique character string --> " + strUnique); 		
-		permutation(strUnique);
-		
+		String str = "abc";
 		AllPermutationsOfString allPerm = new AllPermutationsOfString();
-		String strWithDups = "aabc";
-		allPerm.createArray(strWithDups);		
-		char[] result = new char[strWithDups.length()];
-		System.out.println("\nAll permutations of duplicate character string --> " + strWithDups);
-		allPerm.allPermutationsWithRepeatCharacters("aabc", result, 0);
+		allPerm.allPermutationsWithRepeatCharacters(str);
 		
 	}
 }
