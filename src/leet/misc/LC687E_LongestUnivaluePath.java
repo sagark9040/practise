@@ -1,16 +1,16 @@
 package leet.misc;
 
-public class LongestUnivaluePath {
+public class LC687E_LongestUnivaluePath {
 	
 	// THIS ANSWER PASSED 35 test cases on Leetcode. Failed at 36th. There were a total of 68 test cases!	
 	
-	public static int longestUnivaluePath(TreeNode root) {
+	public static int longestUnivaluePathNOTSURE(TreeNode root) {
 		//Base case --> zero or 1 node in the tree
         if(root == null || (root.left == null & root.right == null))
             return 0;
         
-        int longestPathToLeft = longestUnivaluePath(root.left);
-        int longestPathToRight = longestUnivaluePath(root.right);
+        int longestPathToLeft = longestUnivaluePathNOTSURE(root.left);
+        int longestPathToRight = longestUnivaluePathNOTSURE(root.right);
         int longestPath = 0;
         
         if(root.left != null && root.right != null && 
@@ -28,6 +28,28 @@ public class LongestUnivaluePath {
         longestPath = Math.max(longestPath, Math.max(longestPathToLeft, longestPathToRight));
         return longestPath;            
     }
+	
+	static int ans;
+    public static int longestUnivaluePathOPTIMAL(TreeNode root) {
+        ans = 0;
+        arrowLength(root);
+        return ans;
+    }
+    public static int arrowLength(TreeNode node) {
+        if (node == null) return 0;
+        int left = arrowLength(node.left);
+        int right = arrowLength(node.right);
+        int arrowLeft = 0, arrowRight = 0;
+        if (node.left != null && node.left.val == node.val) {
+            arrowLeft += left + 1;
+        }
+        if (node.right != null && node.right.val == node.val) {
+            arrowRight += right + 1;
+        }
+        ans = Math.max(ans, arrowLeft + arrowRight);
+        return Math.max(arrowLeft, arrowRight);
+    }
+	
 	public static void main(String args[]){
 		TreeNode root = new TreeNode(1);
 		root.left = new TreeNode(4);
@@ -37,7 +59,7 @@ public class LongestUnivaluePath {
 		root.right = new TreeNode(5);
 		root.right.right = new TreeNode(5);
 		
-		System.out.println(longestUnivaluePath(root));
+		System.out.println(longestUnivaluePathOPTIMAL(root));
 		
 		
 		root = new TreeNode(5);
@@ -48,7 +70,7 @@ public class LongestUnivaluePath {
 		root.right = new TreeNode(5);
 		root.right.right = new TreeNode(5);
 		
-		System.out.println(longestUnivaluePath(root));
+		System.out.println(longestUnivaluePathOPTIMAL(root));
 	}
 }
 class TreeNode {
