@@ -1,6 +1,8 @@
 package leet.hash;
 
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
 
 public class LC676M_MagicDictionary {
 
@@ -23,7 +25,7 @@ public class LC676M_MagicDictionary {
 
     /** Initialize your data structure here. */
     Set<String> dict;
-    public MagicDictionary() {
+    public LC676M_MagicDictionary() {
         dict = new HashSet<String>();
     }
     
