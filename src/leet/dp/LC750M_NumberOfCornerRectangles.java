@@ -40,4 +40,26 @@ public class LC750M_NumberOfCornerRectangles {
     		}
     	}    	
     }
+    
+    public int countCornerRectanglesOptimalDPSoln(int[][] grid) {
+        int m = grid.length;
+        int n = grid[0].length;
+        int[][] dp = new int[n][n];
+        
+        int res = 0;
+        for (int r = 0; r < m; r++) {
+            for (int c1 = 0; c1 < n; c1++) {
+                if (grid[r][c1] == 1) {
+                    for (int c2 = c1 + 1; c2 < n; c2++) {
+                        if (grid[r][c2] == 1) {
+                            res += dp[c1][c2];
+                            dp[c1][c2]++;
+                         
+                        }
+                    }
+                }
+            }
+        }
+        return res;
+    }
 }
