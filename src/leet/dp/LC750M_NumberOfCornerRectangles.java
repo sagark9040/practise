@@ -58,13 +58,4 @@ public class LC750M_NumberOfCornerRectangles {
     		}
     	}    	
     }
-    
-    public static void main(String args[]) {
-    	int[][] grid = {{1, 1, 1},
-    	                {1, 1, 1},
-    	                {1, 1, 1}};
-    	LC750M_NumberOfCornerRectangles l = new LC750M_NumberOfCornerRectangles();
-    	System.out.println(l.countCornerRectangles2(grid));
-    	
-    }
 }
