@@ -14,6 +14,7 @@ public class LC532E_KDiffPairsSetInArray {
 			a = a1;
 			b = b1;
 		}
+		
 		@Override
 		public int hashCode() {
 			final int prime = 31;

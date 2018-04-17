@@ -28,6 +28,24 @@ public class LC750M_NumberOfCornerRectangles {
 	    }
     	return count;
     }
+    public int countCornerRectangles2(int[][] grid) {
+        int m = grid.length, n = grid[0].length, res = 0;
+        
+        int[][] dp = new int[n][n];
+        
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (grid[i][j] == 0) continue;
+                
+                for (int q = j + 1; q < n; q++) {
+                    if (grid[i][q] == 0) continue;
+                    res += dp[j][q]++;
+                }
+            }
+        }
+        
+        return res;
+    }
     
     void checkRectangles(int[][] grid, int row, int col) {
     	for(int c=col+1; c<n; c++) {
@@ -39,5 +57,14 @@ public class LC750M_NumberOfCornerRectangles {
         		}
     		}
     	}    	
+    }
+    
+    public static void main(String args[]) {
+    	int[][] grid = {{1, 1, 1},
+    	                {1, 1, 1},
+    	                {1, 1, 1}};
+    	LC750M_NumberOfCornerRectangles l = new LC750M_NumberOfCornerRectangles();
+    	System.out.println(l.countCornerRectangles2(grid));
+    	
     }
 }

@@ -46,10 +46,9 @@ public class LC400E_FindNthDigit {
 			return n;
 		}
 		
-		int powerOfTen = 2, lowerBound = 10, upperBound = 99, previousDigits = 9;
+		int powerOfTen = 2, lowerBound = 10, previousDigits = 9;
 		while(true) {
 			lowerBound = (int) Math.pow(10, powerOfTen-1);			//10
-			upperBound = (int) (Math.pow(10, powerOfTen) - 1);      //99
 			int nextDigits = previousDigits + powerOfTen * ((int) Math.pow(10, powerOfTen) - (int) Math.pow(10, powerOfTen-1));
 
 			//n = 300
