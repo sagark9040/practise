@@ -81,7 +81,7 @@ public class LC365M_WaterAndJugProblem {
 	}
 	
 	public static void main(String args[]) {
-		int x=22003, y=31237, z=123; // 22003
+		int x=5, y=3, z=4; // 22003
 //		31237
 //		123
 		LC365M_WaterAndJugProblem wj = new LC365M_WaterAndJugProblem();
