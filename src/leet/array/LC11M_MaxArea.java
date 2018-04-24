@@ -25,7 +25,7 @@ public class LC11M_MaxArea {
     }
     
 	public static void main(String args[]) {
-		int[] height = {1,1};
+		int[] height = {1,2,3,1};
 		LC11M_MaxArea ma = new LC11M_MaxArea();
 		System.out.println(ma.maxArea(height));
 	}
